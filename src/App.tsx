@@ -1,5 +1,5 @@
 import { MainPageType } from '.';
-import MainPage from './MainPage/MainPage';
+import MainPage from './pages/MainPage';
 
 function App({ placesCount }: MainPageType) {
   return <MainPage placesCount={placesCount} />;

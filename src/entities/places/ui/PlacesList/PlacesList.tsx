@@ -5,10 +5,15 @@ type PlacesListType = {
 };
 
 function PlacesList({ placesCount }: PlacesListType) {
+  const placeIds = Array.from(
+    { length: placesCount },
+    (_, index) => `place_${index}`
+  );
+
   return (
     <div className="cities__places-list places__list tabs__content">
-      {Array.from({ length: placesCount }).map((_, index) => (
-        <PlaceCard key={index} />
+      {placeIds.map((id) => (
+        <PlaceCard key={id} />
       ))}
     </div>
   );

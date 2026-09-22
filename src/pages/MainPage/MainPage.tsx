@@ -1,5 +1,5 @@
-import { MainPageType } from '..';
-import PlacesList from '../PlacesList';
+import { MainPageType } from '../../';
+import { PlacesList } from '../../entities/places';
 
 function MainPage({ placesCount }: MainPageType) {
   return (
