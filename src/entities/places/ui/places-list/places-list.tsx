@@ -1,4 +1,4 @@
-import PlaceCard from '../PlaceCard';
+import PlaceCard from '../place-card';
 
 type PlacesListType = {
   placesCount: number;
