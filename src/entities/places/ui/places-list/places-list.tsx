@@ -7,7 +7,7 @@ type PlacesListType = {
 function PlacesList({ placesCount }: PlacesListType) {
   const placeIds = Array.from(
     { length: placesCount },
-    (_, index) => `place_${index}`
+    (_, index) => `place_${index}`,
   );
 
   return (
