@@ -1,7 +1,7 @@
 import { MainPageType } from '../../types';
-import { PlacesList } from '../../entities/places';
+import { OfferList } from '../../entities/offer';
 
-function MainPage({ placesCount }: MainPageType) {
+function MainPage({ offers }: MainPageType) {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -104,7 +104,7 @@ function MainPage({ placesCount }: MainPageType) {
                   <li className="places__option">Top rated first</li>
                 </ul>
               </form>
-              <PlacesList placesCount={placesCount} />
+              <OfferList offers={offers} />
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
