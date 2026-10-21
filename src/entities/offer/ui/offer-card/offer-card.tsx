@@ -1,4 +1,5 @@
 import { Offer } from '../../../../types';
+import { Link } from 'react-router-dom';
 
 type OfferPropType = {
   offer: Offer;
@@ -18,7 +19,7 @@ function OfferCard({ offer, setActiveOfferId }: OfferPropType) {
         </div>
       )}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <Link to={`offer/${offer.id}`}>
           <img
             className="place-card__image"
             src={offer.images[0]}
@@ -26,7 +27,7 @@ function OfferCard({ offer, setActiveOfferId }: OfferPropType) {
             height="200"
             alt="Place image"
           />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -48,7 +49,7 @@ function OfferCard({ offer, setActiveOfferId }: OfferPropType) {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{offer.title}</a>
+          <Link to={`offer/${offer.id}`}>{offer.title}</Link>
         </h2>
         <p className="place-card__type">{offer.housingType}</p>
       </div>
