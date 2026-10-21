@@ -1,13 +1,11 @@
 import { FavoriteList } from '../../entities/favorite';
+import { groupFavoritesByCity } from '../../entities/favorite/utils/groupFavoritesByCity';
 import { CityName, FavoriteOffer } from '../../types';
 
 type FavoritesProp = { items: FavoriteOffer[] };
 
 function FavoritesPage({ items }: FavoritesProp) {
-  const grouped: Partial<Record<CityName, FavoriteOffer[]>> = Object.groupBy(
-    items,
-    (o) => o.city.name,
-  );
+  const grouped = groupFavoritesByCity(items);
   const cities = (Object.keys(grouped) as CityName[]).sort((a, b) =>
     a.localeCompare(b),
   );

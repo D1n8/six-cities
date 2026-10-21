@@ -57,3 +57,6 @@ export interface Review {
 }
 
 export type FavoriteOffer = Omit<Offer, 'isFavorite'> & { isFavorite: true };
+
+export const isFavorite = (o: Offer): o is FavoriteOffer =>
+  o.isFavorite === true;

@@ -7,7 +7,7 @@ type OfferListType = {
 };
 
 function OfferList({ offers }: OfferListType) {
-  const [activeOfferId, setActiveOfferId] = useState<string | null>(null);
+  const [, setActiveOfferId] = useState<string | null>(null);
 
   return (
     <div className="cities__places-list places__list tabs__content">
