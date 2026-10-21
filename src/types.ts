@@ -55,3 +55,5 @@ export interface Review {
   dateLabel: string;
   text: string;
 }
+
+export type FavoriteOffer = Omit<Offer, 'isFavorite'> & { isFavorite: true };

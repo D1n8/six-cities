@@ -6,6 +6,12 @@ const AMSTERDAM_LOCATION: Location = {
   zoom: 8,
 };
 
+const COLOGNE_LOCATION: Location = {
+  latitude: 52.35514938496378,
+  longitude: 4.673877537499948,
+  zoom: 8,
+};
+
 const IMAGES = [
   'img/room.jpg',
   'img/apartment-01.jpg',
@@ -36,7 +42,7 @@ export const mockOffers: Offer[] = [
     price: 120,
     city: { name: 'Amsterdam', location: AMSTERDAM_LOCATION },
     location: AMSTERDAM_LOCATION,
-    isFavorite: false,
+    isFavorite: true,
     isPremium: true,
     rating: 4.8,
     description:
@@ -83,9 +89,9 @@ export const mockOffers: Offer[] = [
     title: 'Canal View Prinsengracht',
     housingType: 'apartment',
     price: 132,
-    city: { name: 'Amsterdam', location: AMSTERDAM_LOCATION },
-    location: AMSTERDAM_LOCATION,
-    isFavorite: false,
+    city: { name: 'Cologne', location: COLOGNE_LOCATION },
+    location: COLOGNE_LOCATION,
+    isFavorite: true,
     isPremium: false,
     rating: 4.7,
     description:
@@ -121,8 +127,8 @@ export const mockOffers: Offer[] = [
     title: 'Nice, cozy, warm big bed apartment',
     housingType: 'apartment',
     price: 180,
-    city: { name: 'Amsterdam', location: AMSTERDAM_LOCATION },
-    location: AMSTERDAM_LOCATION,
+    city: { name: 'Cologne', location: COLOGNE_LOCATION },
+    location: COLOGNE_LOCATION,
     isFavorite: false,
     isPremium: true,
     rating: 3.4,

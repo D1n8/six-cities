@@ -2,11 +2,16 @@ import { Offer } from '../../../../types';
 
 type OfferPropType = {
   offer: Offer;
+  setActiveOfferId: (id: string | null) => void;
 };
 
-function OfferCard({ offer }: OfferPropType) {
+function OfferCard({ offer, setActiveOfferId }: OfferPropType) {
   return (
-    <article className="cities__card place-card">
+    <article
+      className="cities__card place-card"
+      onMouseEnter={() => setActiveOfferId(offer.id)}
+      onMouseLeave={() => setActiveOfferId(null)}
+    >
       {offer.isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
@@ -38,7 +43,7 @@ function OfferCard({ offer }: OfferPropType) {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{ width: `${20 * offer.rating}%` }}></span>
+            <span style={{ width: `${(offer.rating / 5) * 100}%` }}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>

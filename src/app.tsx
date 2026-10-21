@@ -16,8 +16,10 @@ function App({ offers }: MainPageType) {
         <Route
           path="/favorites"
           element={
-            <PrivateRoute isAuth={false}>
-              <FavoritesPage />
+            <PrivateRoute isAuth={true}>
+              <FavoritesPage
+                items={offers.filter((offer) => offer.isFavorite === true)}
+              />
             </PrivateRoute>
           }
         />
