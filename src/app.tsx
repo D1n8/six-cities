@@ -1,4 +1,4 @@
-import { MainPageType } from './types';
+import { isFavorite, MainPageType } from './types';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/main-page';
 import LoginPage from './pages/login-page';
@@ -7,17 +7,17 @@ import OfferPage from './pages/offer-page';
 import NotFoundPage from './pages/not-found-page';
 import PrivateRoute from './routes/private-route';
 
-function App({ placesCount }: MainPageType) {
+function App({ offers }: MainPageType) {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainPage placesCount={placesCount} />} />
+        <Route path="/" element={<MainPage offers={offers} />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
           path="/favorites"
           element={
             <PrivateRoute isAuth={false}>
-              <FavoritesPage />
+              <FavoritesPage items={offers.filter(isFavorite)} />
             </PrivateRoute>
           }
         />
