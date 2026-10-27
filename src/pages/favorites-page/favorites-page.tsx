@@ -1,6 +1,6 @@
 import { FavoriteList } from '../../entities/favorite';
-import { groupFavoritesByCity } from '../../entities/favorite/utils/groupFavoritesByCity';
-import { CityName, FavoriteOffer } from '../../types';
+import { groupFavoritesByCity } from '../../entities/favorite/utils/group-favorites-by-city';
+import type { CityName, FavoriteOffer } from '../../types';
 
 type FavoritesProp = { items: FavoriteOffer[] };
 

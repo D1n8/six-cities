@@ -1,4 +1,4 @@
-import { CityName, FavoriteOffer } from '../../../types';
+import type { CityName, FavoriteOffer } from '../../../types';
 
 export function groupFavoritesByCity(
   items: FavoriteOffer[],

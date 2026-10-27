@@ -1,4 +1,4 @@
-import { Offer } from '../../../../types';
+import type { Offer } from '../../../../types';
 import { Link } from 'react-router-dom';
 
 type OfferPropType = {

@@ -1,4 +1,4 @@
-import { MainPageType } from '../../types';
+import type { MainPageType } from '../../types';
 import { OfferList } from '../../entities/offer';
 
 function MainPage({ offers }: MainPageType) {
