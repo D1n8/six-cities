@@ -1,6 +1,6 @@
 import type { RatingType } from '../../../types';
 
-export const RATINGS: RatingType[] = [
+export const RATINGS: readonly RatingType[] = [
   { value: 5, title: 'perfect' },
   { value: 4, title: 'good' },
   { value: 3, title: 'not bad' },
