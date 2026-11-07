@@ -5,7 +5,7 @@ export function groupFavoritesByCity(
 ): Partial<Record<CityName, FavoriteOffer[]>> {
   return items.reduce<Partial<Record<CityName, FavoriteOffer[]>>>(
     (acc, item) => {
-      const city = item.city.name;
+      const city = item.city.title;
       (acc[city] ??= []).push(item);
       return acc;
     },

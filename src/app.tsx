@@ -9,11 +9,14 @@ import PrivateRoute from './routes/private-route';
 import { isFavorite } from './entities/favorite/utils/is-favorite';
 import { routes } from './routes/config/routes';
 
-function App({ offers }: MainPageType) {
+function App({ offers, city, points }: MainPageType) {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={routes.main.mask} element={<MainPage offers={offers} />} />
+        <Route
+          path={routes.main.mask}
+          element={<MainPage offers={offers} city={city} points={points} />}
+        />
         <Route path={routes.login.mask} element={<LoginPage />} />
         <Route
           path={routes.favorites.mask}

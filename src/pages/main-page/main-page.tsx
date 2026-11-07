@@ -1,7 +1,8 @@
 import type { MainPageType } from '../../types';
 import { OfferList } from '../../entities/offer';
+import Map from '../../entities/map/ui/map';
 
-function MainPage({ offers }: MainPageType) {
+function MainPage({ offers, city, points }: MainPageType) {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -107,7 +108,7 @@ function MainPage({ offers }: MainPageType) {
               <OfferList offers={offers} />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <Map city={city} points={points} />
             </div>
           </div>
         </div>
