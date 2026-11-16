@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 
 type OfferPropType = {
   offer: Offer;
+  isNear?: boolean;
   setActiveOfferId: (id: string | null) => void;
 };
 
-function OfferCard({ offer, setActiveOfferId }: OfferPropType) {
+function OfferCard({ offer, isNear, setActiveOfferId }: OfferPropType) {
   return (
     <article
-      className="cities__card place-card"
+      className={`${isNear ? 'near-places' : 'cities'}__card place-card`}
       onMouseEnter={() => setActiveOfferId(offer.id)}
       onMouseLeave={() => setActiveOfferId(null)}
     >
@@ -18,7 +19,9 @@ function OfferCard({ offer, setActiveOfferId }: OfferPropType) {
           <span>Premium</span>
         </div>
       )}
-      <div className="cities__image-wrapper place-card__image-wrapper">
+      <div
+        className={`${isNear ? 'near-places' : 'cities'}__image-wrapper place-card__image-wrapper`}
+      >
         <Link to={`offer/${offer.id}`}>
           <img
             className="place-card__image"

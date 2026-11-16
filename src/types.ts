@@ -43,7 +43,7 @@ export interface Review {
     name: string;
     avatar: string;
   };
-  rating: number;
+  rating: RatingValueType;
   date: string;
   dateLabel: string;
   text: string;
