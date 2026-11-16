@@ -1,20 +1,10 @@
 import { Fragment, useState } from 'react';
-
-const RATINGS = [
-  { value: 5, title: 'perfect' },
-  { value: 4, title: 'good' },
-  { value: 3, title: 'not bad' },
-  { value: 2, title: 'badly' },
-  { value: 1, title: 'terribly' },
-] as const;
+import { RATINGS } from '../../consts/ratings';
+import { RatingValueType } from '../../../../types';
 
 function OfferReviewForm() {
   const [reviewText, setReviewText] = useState<string>('');
-  const [rating, setRating] = useState<number>(0);
-
-  function handleRatingChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setRating(+e.target.value);
-  }
+  const [rating, setRating] = useState<RatingValueType>(0);
 
   return (
     <form className="reviews__form form" action="#" method="post">
@@ -31,7 +21,7 @@ function OfferReviewForm() {
               id={`${value}-stars`}
               type="radio"
               checked={rating === value}
-              onChange={handleRatingChange}
+              onChange={() => setRating(value)}
             />
             <label
               htmlFor={`${value}-stars`}

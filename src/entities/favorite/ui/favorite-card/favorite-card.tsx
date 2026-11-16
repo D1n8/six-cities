@@ -1,4 +1,6 @@
-import { FavoriteOffer } from '../../../../types';
+import { Link } from 'react-router-dom';
+import { routes } from '../../../../routes/config/routes';
+import type { FavoriteOffer } from '../../../../types';
 
 function FavoriteCard({ offer }: { offer: FavoriteOffer }) {
   return (
@@ -9,7 +11,7 @@ function FavoriteCard({ offer }: { offer: FavoriteOffer }) {
         </div>
       )}
       <div className="favorites__image-wrapper place-card__image-wrapper">
-        <a href={`/offer/${offer.id}`}>
+        <Link to={routes.offer.create(offer.id)}>
           <img
             className="place-card__image"
             src={offer.images[0]}
@@ -17,7 +19,7 @@ function FavoriteCard({ offer }: { offer: FavoriteOffer }) {
             height="110"
             alt={offer.title}
           />
-        </a>
+        </Link>
       </div>
       <div className="favorites__card-info place-card__info">
         <div className="place-card__price-wrapper">
@@ -42,7 +44,7 @@ function FavoriteCard({ offer }: { offer: FavoriteOffer }) {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href={`/offer/${offer.id}`}>{offer.title}</a>
+          <Link to={routes.offer.create(offer.id)}>{offer.title}</Link>
         </h2>
         <p className="place-card__type">{offer.housingType}</p>
       </div>

@@ -1,16 +1,42 @@
-import type { Location, Offer } from '../types';
+import type { City, Offer, Point, Points } from '../types';
 
-const AMSTERDAM_LOCATION: Location = {
-  latitude: 52.35514938496378,
-  longitude: 4.673877537499948,
+export const AMSTERDAM_LOCATION: City = {
+  title: 'Amsterdam',
+  lat: 52.35514938496378,
+  lng: 4.673877537499948,
   zoom: 8,
 };
 
-const COLOGNE_LOCATION: Location = {
-  latitude: 52.35514938496378,
-  longitude: 4.673877537499948,
-  zoom: 8,
+const OFFER_LOCATION_1: Point = {
+  title: 'Offer 1',
+  lat: 52.3909553943508,
+  lng: 4.85309666406198,
 };
+
+const OFFER_LOCATION_2: Point = {
+  title: 'Offer 2',
+  lat: 52.3609553943508,
+  lng: 4.85309666406198,
+};
+
+const OFFER_LOCATION_3: Point = {
+  title: 'Offer 3',
+  lat: 52.3909553943508,
+  lng: 4.929309666406198,
+};
+
+const OFFER_LOCATION_4: Point = {
+  title: 'Offer 4',
+  lat: 52.3809553943508,
+  lng: 4.939309666406198,
+};
+
+export const POINTS: Points = [
+  OFFER_LOCATION_1,
+  OFFER_LOCATION_2,
+  OFFER_LOCATION_3,
+  OFFER_LOCATION_4,
+];
 
 const IMAGES = [
   'img/room.jpg',
@@ -40,8 +66,8 @@ export const mockOffers: Offer[] = [
     title: 'Beautiful & luxurious studio at great location',
     housingType: 'apartment',
     price: 120,
-    city: { name: 'Amsterdam', location: AMSTERDAM_LOCATION },
-    location: AMSTERDAM_LOCATION,
+    city: AMSTERDAM_LOCATION,
+    location: OFFER_LOCATION_1,
     isFavorite: true,
     isPremium: true,
     rating: 4.8,
@@ -63,8 +89,8 @@ export const mockOffers: Offer[] = [
     title: 'Wood and stone place',
     housingType: 'room',
     price: 80,
-    city: { name: 'Amsterdam', location: AMSTERDAM_LOCATION },
-    location: AMSTERDAM_LOCATION,
+    city: AMSTERDAM_LOCATION,
+    location: OFFER_LOCATION_2,
     isFavorite: true,
     isPremium: false,
     rating: 4.5,
@@ -89,8 +115,8 @@ export const mockOffers: Offer[] = [
     title: 'Canal View Prinsengracht',
     housingType: 'apartment',
     price: 132,
-    city: { name: 'Cologne', location: COLOGNE_LOCATION },
-    location: COLOGNE_LOCATION,
+    city: AMSTERDAM_LOCATION,
+    location: OFFER_LOCATION_3,
     isFavorite: true,
     isPremium: false,
     rating: 4.7,
@@ -127,8 +153,8 @@ export const mockOffers: Offer[] = [
     title: 'Nice, cozy, warm big bed apartment',
     housingType: 'apartment',
     price: 180,
-    city: { name: 'Cologne', location: COLOGNE_LOCATION },
-    location: COLOGNE_LOCATION,
+    city: AMSTERDAM_LOCATION,
+    location: OFFER_LOCATION_4,
     isFavorite: false,
     isPremium: true,
     rating: 3.4,

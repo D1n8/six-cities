@@ -1,5 +1,7 @@
 export type MainPageType = {
   offers: Offer[];
+  city: City;
+  points: Points;
 };
 
 export type CityName =
@@ -9,12 +11,6 @@ export type CityName =
   | 'Brussels'
   | 'Hamburg'
   | 'Dusseldorf';
-
-export interface Location {
-  latitude: number;
-  longitude: number;
-  zoom: number;
-}
 
 export interface User {
   name: string;
@@ -27,11 +23,8 @@ export interface Offer {
   title: string;
   housingType: 'apartment' | 'room' | 'house' | 'hotel';
   price: number;
-  city: {
-    name: CityName;
-    location: Location;
-  };
-  location: Location;
+  city: City;
+  location: Point;
   isFavorite: boolean;
   isPremium: boolean;
   rating: number;
@@ -58,5 +51,23 @@ export interface Review {
 
 export type FavoriteOffer = Omit<Offer, 'isFavorite'> & { isFavorite: true };
 
-export const isFavorite = (o: Offer): o is FavoriteOffer =>
-  o.isFavorite === true;
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
+export type RatingType = {
+  value: RatingValueType;
+  title: string;
+};
+
+export type City = {
+  title: CityName;
+  lat: number;
+  lng: number;
+  zoom: number;
+};
+
+export type Point = {
+  title: string;
+  lat: number;
+  lng: number;
+};
+
+export type Points = Point[];
